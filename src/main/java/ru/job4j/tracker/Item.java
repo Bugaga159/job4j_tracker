@@ -16,6 +16,15 @@ public class Item {
     public Item(int id, String name) {
     }
 
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", created=" + created +
+                '}';
+    }
+
     public int getId() {
         return id;
     }
