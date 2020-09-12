@@ -39,4 +39,20 @@ public class TrackerTest {
         tracker.delete(id);
         assertThat(tracker.findById(id), is(nullValue()));
     }
+
+    @Test
+    public void whenFindByName() {
+        Tracker tracker = new Tracker();
+        Item bug = new Item();
+        Item pork = new Item();
+        Item apple = new Item();
+        bug.setName("Bug");
+        pork.setName("Pork");
+        apple.setName("Apple");
+        tracker.add(bug);
+        tracker.add(pork);
+        tracker.add(apple);
+        Item[] rsl = tracker.findByName("Apple");
+        assertThat(rsl[0].getName(), is("Apple"));
+    }
 }
