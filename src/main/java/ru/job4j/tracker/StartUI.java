@@ -27,7 +27,7 @@ public class StartUI {
 			} else if (select == 1) {
 				System.out.println("--- Show all Items ---");
 				Item[] items = tracker.findAll();
-				if (items[0] == null) {
+				if (items.length == 0) {
 					System.out.println("null");
 				} else {
 					for (Item item: items) {
