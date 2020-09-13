@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Matches {
 	private static int size = 11;
 	private static boolean rsl = true;
+	private static int winner = 1;
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
@@ -12,6 +13,7 @@ public class Matches {
 			if (!(takeUser(1, input))) break;
 			if (!(takeUser(2, input))) break;
 		}
+		System.out.println("Игрок " + winner + " WIN!");
 	}
 
 	private static boolean takeUser(int numberUser, Scanner input) {
@@ -25,7 +27,7 @@ public class Matches {
 			size -= player;
 			System.out.println("Осталось " + size + " спичек");
 			if (size == 0) {
-				System.out.println("Игрок " + numberUser + " WIN!");
+				winner = numberUser;
 				rsl = false;
 			}
 		}
