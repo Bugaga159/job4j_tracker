@@ -15,12 +15,18 @@ public class StartUI {
 		tracker.add(item);
     }
 
-    public static void replaceItem(int id, String name, Tracker tracker) {
-		Item repItem = new Item(name);
-		StartUI.printResult(tracker.replace(id, repItem), id);
+	public static void replaceItem(Input input, Tracker tracker) {
+		System.out.println(" === Update item ====");
+		int id = input.askInt("Enter id:");
+		String name = input.askStr("Enter a new name of item: ");
+		Item item = new Item(name);
+		item.setId(id);
+		tracker.replace(id, item);
 	}
 
-	public static void deteleItem(int id, Tracker tracker) {
+	public static void deteleItem(Input input, Tracker tracker) {
+		System.out.println("--- Delete item ---");
+		int id = input.askInt("--- Input id of item ---");
 		printResult(tracker.delete(id), id);
 	}
 
@@ -79,14 +85,9 @@ public class StartUI {
 			} else if (select == 1) {
 				StartUI.showAllItem(tracker);
 			} else if (select == 2) {
-				System.out.println("--- Edit item ---");
-				int id = input.askInt("--- Input id of item ---");
-				String name = input.askStr("--- Input name to item ---");
-				StartUI.replaceItem(id, name, tracker);
+				StartUI.replaceItem(input, tracker);
 			} else if (select == 3) {
-				System.out.println("--- Delete item ---");
-				int id = input.askInt("--- Input id of item ---");
-				StartUI.deteleItem(id, tracker);
+				StartUI.deteleItem(input, tracker);
 			} else if (select == 4) {
 				StartUI.findById(input, tracker);
 			} else if (select == 5) {
