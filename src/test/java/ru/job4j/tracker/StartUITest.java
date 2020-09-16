@@ -25,7 +25,8 @@ public class StartUITest {
 				String.valueOf(item.getId()), // id сохраненной заявки в объект tracker.
 				"replaced item"
 		};
-		StartUI.replaceItem(new StubInput(answers), tracker);
+		boolean result = StartUI.replaceItem(new StubInput(answers), tracker);
+		assertTrue(result);
 		Item replaced = tracker.findById(item.getId());
 		assertThat(replaced.getName(), is("replaced item"));
 	}
@@ -37,7 +38,8 @@ public class StartUITest {
 		tracker.add(item);
 		int numberIdItem = item.getId();
 		String[] answers = {String.valueOf(numberIdItem)};
-		StartUI.deteleItem(new StubInput(answers), tracker);
+		boolean result = StartUI.deteleItem(new StubInput(answers), tracker);
+		assertTrue(result);
 		Item replaced = tracker.findById(numberIdItem);
 		assertNull(replaced);
 	}

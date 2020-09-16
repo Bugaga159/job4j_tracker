@@ -15,19 +15,23 @@ public class StartUI {
 		tracker.add(item);
     }
 
-	public static void replaceItem(Input input, Tracker tracker) {
+	public static boolean replaceItem(Input input, Tracker tracker) {
 		System.out.println(" === Update item ====");
 		int id = input.askInt("Enter id:");
 		String name = input.askStr("Enter a new name of item: ");
 		Item item = new Item(name);
 		item.setId(id);
-		tracker.replace(id, item);
+		boolean rsl = tracker.replace(id, item);
+		printResult(rsl, id);
+		return rsl;
 	}
 
-	public static void deteleItem(Input input, Tracker tracker) {
+	public static boolean deteleItem(Input input, Tracker tracker) {
 		System.out.println("--- Delete item ---");
 		int id = input.askInt("--- Input id of item ---");
-		printResult(tracker.delete(id), id);
+		boolean rsl = tracker.delete(id);
+		printResult(rsl, id);
+		return rsl;
 	}
 
 	public static void showAllItem(Tracker tracker) {
