@@ -15,17 +15,12 @@ public class StartUI {
 		tracker.add(item);
     }
 
-    public static void replaceItem(Input input, Tracker tracker) {
-		System.out.println("--- Edit item ---");
-		int id = Integer.valueOf(input.askStr("--- Input id of item ---"));
-		String name = input.askStr("--- Input name to item ---");
+    public static void replaceItem(int id, String name, Tracker tracker) {
 		Item repItem = new Item(name);
 		StartUI.printResult(tracker.replace(id, repItem), id);
 	}
 
-	public static void deteleItem(Input input, Tracker tracker) {
-		System.out.println("--- Delete item ---");
-		int id = Integer.valueOf(input.askStr("--- Input id of item ---"));
+	public static void deteleItem(int id, Tracker tracker) {
 		printResult(tracker.delete(id), id);
 	}
 
@@ -43,7 +38,7 @@ public class StartUI {
 
 	public static void findById(Input input, Tracker tracker) {
 		System.out.println("--- Find item by Id ---");
-		int id = Integer.valueOf(input.askStr("--- Input id of item ---"));
+		int id = input.askInt("--- Input id of item ---");
 		Item rsl = tracker.findById(id);
 		if (rsl == null) {
 			System.out.println("Заявка с таким id не найдена");
@@ -84,9 +79,14 @@ public class StartUI {
 			} else if (select == 1) {
 				StartUI.showAllItem(tracker);
 			} else if (select == 2) {
-				StartUI.replaceItem(input, tracker);
+				System.out.println("--- Edit item ---");
+				int id = input.askInt("--- Input id of item ---");
+				String name = input.askStr("--- Input name to item ---");
+				StartUI.replaceItem(id, name, tracker);
 			} else if (select == 3) {
-				StartUI.deteleItem(input, tracker);
+				System.out.println("--- Delete item ---");
+				int id = input.askInt("--- Input id of item ---");
+				StartUI.deteleItem(id, tracker);
 			} else if (select == 4) {
 				StartUI.findById(input, tracker);
 			} else if (select == 5) {
