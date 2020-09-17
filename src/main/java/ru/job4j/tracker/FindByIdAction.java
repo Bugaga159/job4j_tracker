@@ -18,7 +18,7 @@ public class FindByIdAction implements UserAction {
 		return true;
 	}
 
-	public static void printResult(Item item) {
+	private static void printResult(Item item) {
 		System.out.println(item.getId() + " - " + item.getName());
 	}
 }

@@ -14,7 +14,7 @@ public class DeleteAction implements UserAction {
 		return true;
 	}
 
-	public static void printResult(boolean rst, int id) {
+	private static void printResult(boolean rst, int id) {
 		System.out.println(rst
 				? "--- SUCCESS ---"
 				: "--- FAIL: id:" + id + " does not exist ---");
