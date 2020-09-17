@@ -1,6 +1,6 @@
 package ru.job4j.tracker;
 
-public class ShowAllAction extends PrintResult implements UserAction {
+public class ShowAllAction implements UserAction {
 	@Override
 	public String name() {
 		return "Show all items";
@@ -17,5 +17,9 @@ public class ShowAllAction extends PrintResult implements UserAction {
 			}
 		}
 		return true;
+	}
+
+	public static void printResult(Item item) {
+		System.out.println(item.getId() + " - " + item.getName());
 	}
 }

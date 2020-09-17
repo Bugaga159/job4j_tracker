@@ -1,6 +1,6 @@
 package ru.job4j.tracker;
 
-public class FindByIdAction extends PrintResult implements UserAction {
+public class FindByIdAction implements UserAction {
 	@Override
 	public String name() {
 		return "Find item by Id";
@@ -16,5 +16,9 @@ public class FindByIdAction extends PrintResult implements UserAction {
 			printResult(rsl);
 		}
 		return true;
+	}
+
+	public static void printResult(Item item) {
+		System.out.println(item.getId() + " - " + item.getName());
 	}
 }
