@@ -1,6 +1,12 @@
 package ru.job4j.tracker;
 
 public class ReplaceAction implements UserAction {
+	private final Output out;
+
+	public ReplaceAction(Output out) {
+		this.out = out;
+	}
+
 	@Override
 	public String name() {
 		return "Edit item";
@@ -17,8 +23,8 @@ public class ReplaceAction implements UserAction {
 		return true;
 	}
 
-	private static void printResult(boolean rst, int id) {
-		System.out.println(rst
+	private void printResult(boolean rst, int id) {
+		out.println(rst
 				? "--- SUCCESS ---"
 				: "--- FAIL: id:" + id + " does not exist ---");
 	}

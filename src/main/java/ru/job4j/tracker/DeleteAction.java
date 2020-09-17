@@ -1,6 +1,12 @@
 package ru.job4j.tracker;
 
 public class DeleteAction implements UserAction {
+	private final Output out;
+
+	public DeleteAction(Output out) {
+		this.out = out;
+	}
+
 	@Override
 	public String name() {
 		return "Delete item";
@@ -14,8 +20,8 @@ public class DeleteAction implements UserAction {
 		return true;
 	}
 
-	private static void printResult(boolean rst, int id) {
-		System.out.println(rst
+	private void printResult(boolean rst, int id) {
+		out.println(rst
 				? "--- SUCCESS ---"
 				: "--- FAIL: id:" + id + " does not exist ---");
 	}
