@@ -12,25 +12,4 @@ public class TrackerEnumTest {
 		TrackerEnum trackerTwo = TrackerEnum.INSTANCE;
 		assertThat(tracker, is(trackerTwo));
 	}
-
-	@Test
-	public void whenInstanceTrackerEagerStaticFinalField() {
-		TrackerEagerStaticFinalField tracker = TrackerEagerStaticFinalField.getInstance();
-		TrackerEagerStaticFinalField trackerTwo = TrackerEagerStaticFinalField.getInstance();
-		assertThat(tracker, is(trackerTwo));
-	}
-
-	@Test
-	public void whenInstanceTrackerLazyStaticField() {
-		TrackerLazyStaticField tracker = TrackerLazyStaticField.getInstance();
-		TrackerLazyStaticField trackerTwo = TrackerLazyStaticField.getInstance();
-		assertThat(tracker, is(trackerTwo));
-	}
-
-	@Test
-	public void whenInstanceTrackerLazyStaticPrivateFinalField() {
-		TrackerLazyStaticPrivateFinalField tracker = TrackerLazyStaticPrivateFinalField.getInstance();
-		TrackerLazyStaticPrivateFinalField trackerTwo = TrackerLazyStaticPrivateFinalField.getInstance();
-		assertThat(tracker, is(trackerTwo));
-	}
 }
