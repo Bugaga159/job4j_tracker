@@ -24,6 +24,7 @@ public class FindByIdAction implements UserAction {
 		return true;
 	}
 
+
 	private void printResult(Item item) {
 		out.println(item.getId() + " - " + item.getName());
 	}
