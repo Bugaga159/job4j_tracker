@@ -1,6 +1,9 @@
 package ru.job4j.tracker;
 
 import org.junit.Test;
+
+import java.util.List;
+
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.core.IsNull.nullValue;
@@ -52,7 +55,7 @@ public class TrackerTest {
         tracker.add(bug);
         tracker.add(pork);
         tracker.add(apple);
-        Item[] rsl = tracker.findByName("Apple");
-        assertThat(rsl[0].getName(), is("Apple"));
+        List<Item> rsl = tracker.findByName("Apple");
+        assertThat(rsl.get(0).getName(), is("Apple"));
     }
 }
