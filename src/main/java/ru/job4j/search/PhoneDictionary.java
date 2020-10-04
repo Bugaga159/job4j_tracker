@@ -17,9 +17,11 @@ public class PhoneDictionary {
 	public ArrayList<Person> find(String key) {
 		ArrayList<Person> result = new ArrayList<>();
 		for (Person person: persons) {
-			if (person.toString().toLowerCase().contains(
-					key.toLowerCase()
-			)) {
+			if (person.getSurname().toLowerCase().contains(key.toLowerCase())
+				|| person.getPhone().toLowerCase().contains(key.toLowerCase())
+				|| person.getName().toLowerCase().contains(key.toLowerCase())
+				|| person.getAddress().toLowerCase().contains(key.toLowerCase())
+			) {
 				result.add(person);
 			}
 		}

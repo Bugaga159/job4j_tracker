@@ -13,14 +13,6 @@ public class Person {
 		this.address = address;
 	}
 
-	@Override
-	public String toString() {
-		return name + " "
-				+ surname + " "
-				+ phone+ " "
-				+ address;
-	}
-
 	public String getName() {
 		return name;
 	}
