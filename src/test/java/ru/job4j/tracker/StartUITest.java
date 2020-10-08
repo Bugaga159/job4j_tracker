@@ -44,7 +44,8 @@ public class StartUITest {
 				"Menu." + System.lineSeparator()
 						+ "0. Add new Item" + System.lineSeparator()
 						+ "1. Exit Program" + System.lineSeparator()
-						+ "=== Create a new Item ====" + System.lineSeparator()
+						+ "=== Create a new Item ===="
+						+ System.lineSeparator()
 						+ "Menu." + System.lineSeparator()
 						+ "0. Add new Item" + System.lineSeparator()
 						+ "1. Exit Program" + System.lineSeparator()
@@ -72,7 +73,8 @@ public class StartUITest {
 						+ "0. Add new Item" + System.lineSeparator()
 						+ "1. Show all items" + System.lineSeparator()
 						+ "2. Exit Program" + System.lineSeparator()
-						+ "=== Create a new Item ====" + System.lineSeparator()
+						+ "=== Create a new Item ===="
+						+ System.lineSeparator()
 						+ "Menu." + System.lineSeparator()
 						+ "0. Add new Item" + System.lineSeparator()
 						+ "1. Show all items" + System.lineSeparator()
@@ -107,7 +109,8 @@ public class StartUITest {
 						+ "0. Add new Item" + System.lineSeparator()
 						+ "1. Find items by name" + System.lineSeparator()
 						+ "2. Exit Program" + System.lineSeparator()
-						+ "=== Create a new Item ====" + System.lineSeparator()
+						+ "=== Create a new Item ===="
+						+ System.lineSeparator()
 						+ "Menu." + System.lineSeparator()
 						+ "0. Add new Item" + System.lineSeparator()
 						+ "1. Find items by name" + System.lineSeparator()
@@ -142,12 +145,14 @@ public class StartUITest {
 						+ "0. Add new Item" + System.lineSeparator()
 						+ "1. Find items by name" + System.lineSeparator()
 						+ "2. Exit Program" + System.lineSeparator()
-						+ "=== Create a new Item ====" + System.lineSeparator()
+						+ "=== Create a new Item ===="
+						+ System.lineSeparator()
 						+ "Menu." + System.lineSeparator()
 						+ "0. Add new Item" + System.lineSeparator()
 						+ "1. Find items by name" + System.lineSeparator()
 						+ "2. Exit Program" + System.lineSeparator()
-						+ "Заявки с таким именем не найдены" + System.lineSeparator()
+						+ "Заявки с таким именем не найдены"
+						+ System.lineSeparator()
 						+ "Menu." + System.lineSeparator()
 						+ "0. Add new Item" + System.lineSeparator()
 						+ "1. Find items by name" + System.lineSeparator()
@@ -177,7 +182,8 @@ public class StartUITest {
 						+ "0. Add new Item" + System.lineSeparator()
 						+ "1. Find item by Id" + System.lineSeparator()
 						+ "2. Exit Program" + System.lineSeparator()
-						+ "=== Create a new Item ====" + System.lineSeparator()
+						+ "=== Create a new Item ===="
+						+ System.lineSeparator()
 						+ "Menu." + System.lineSeparator()
 						+ "0. Add new Item" + System.lineSeparator()
 						+ "1. Find item by Id" + System.lineSeparator()
@@ -212,12 +218,14 @@ public class StartUITest {
 						+ "0. Add new Item" + System.lineSeparator()
 						+ "1. Find item by Id" + System.lineSeparator()
 						+ "2. Exit Program" + System.lineSeparator()
-						+ "=== Create a new Item ====" + System.lineSeparator()
+						+ "=== Create a new Item ===="
+						+ System.lineSeparator()
 						+ "Menu." + System.lineSeparator()
 						+ "0. Add new Item" + System.lineSeparator()
 						+ "1. Find item by Id" + System.lineSeparator()
 						+ "2. Exit Program" + System.lineSeparator()
-						+ "Заявка с таким id не найдена" + System.lineSeparator()
+						+ "Заявка с таким id не найдена"
+						+ System.lineSeparator()
 						+ "Menu." + System.lineSeparator()
 						+ "0. Add new Item" + System.lineSeparator()
 						+ "1. Find item by Id" + System.lineSeparator()
@@ -240,11 +248,11 @@ public class StartUITest {
 		assertThat(out.toString(), is(
 				String.format(
 						"Menu.%n"
-								+ "0. Exit Program%n"
-								+ "Wrong input, you can select: 0 .. 0%n"
-								+ "Menu.%n"
-								+ "0. Exit Program%n"
-								+ "--- Goodbye!---%n"
+						+ "0. Exit Program%n"
+						+ "Wrong input, you can select: 0 .. 0%n"
+						+ "Menu.%n"
+						+ "0. Exit Program%n"
+						+ "--- Goodbye!---%n"
 				)
 		));
 	}

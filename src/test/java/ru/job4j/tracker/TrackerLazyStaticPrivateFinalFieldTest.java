@@ -8,8 +8,10 @@ import static org.junit.Assert.*;
 public class TrackerLazyStaticPrivateFinalFieldTest {
 	@Test
 	public void whenInstanceTrackerLazyStaticPrivateFinalField() {
-		TrackerLazyStaticPrivateFinalField tracker = TrackerLazyStaticPrivateFinalField.getInstance();
-		TrackerLazyStaticPrivateFinalField trackerTwo = TrackerLazyStaticPrivateFinalField.getInstance();
+		TrackerLazyStaticPrivateFinalField tracker = TrackerLazyStaticPrivateFinalField
+				.getInstance();
+		TrackerLazyStaticPrivateFinalField trackerTwo = TrackerLazyStaticPrivateFinalField
+				.getInstance();
 		assertThat(tracker, is(trackerTwo));
 	}
 

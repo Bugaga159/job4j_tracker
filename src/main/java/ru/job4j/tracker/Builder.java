@@ -1,6 +1,6 @@
 package ru.job4j.tracker;
 
-public class Builder extends Engineer{
+public class Builder extends Engineer {
 	private int level;
 
 	public int getLevel() {

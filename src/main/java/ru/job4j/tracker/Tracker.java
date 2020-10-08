@@ -22,7 +22,9 @@ public class Tracker {
     public List<Item> findByName(String key) {
         List<Item> addedAllFind = new ArrayList<Item>();
         for (Item item: items) {
-            if (item.getName().equals(key)) addedAllFind.add(item);
+            if (item.getName().equals(key)) {
+                addedAllFind.add(item);
+            }
         }
         return addedAllFind;
     }

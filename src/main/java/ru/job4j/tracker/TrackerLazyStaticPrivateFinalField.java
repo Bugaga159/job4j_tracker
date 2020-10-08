@@ -12,7 +12,11 @@ public class TrackerLazyStaticPrivateFinalField {
 	}
 
 	private static final class Holder {
-		private static final TrackerLazyStaticPrivateFinalField INSTANCE = new TrackerLazyStaticPrivateFinalField();
+		private static final TrackerLazyStaticPrivateFinalField INSTANCE;
+
+		static {
+			INSTANCE = new TrackerLazyStaticPrivateFinalField();
+		}
 	}
 
 	public Tracker getTracker() {

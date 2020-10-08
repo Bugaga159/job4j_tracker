@@ -9,7 +9,8 @@ public class TrackerEagerStaticFinalFieldTest {
 	@Test
 	public void whenInstanceTrackerEagerStaticFinalField() {
 		TrackerEagerStaticFinalField tracker = TrackerEagerStaticFinalField.getInstance();
-		TrackerEagerStaticFinalField trackerTwo = TrackerEagerStaticFinalField.getInstance();
+		TrackerEagerStaticFinalField trackerTwo = TrackerEagerStaticFinalField
+				.getInstance();
 		assertThat(tracker, is(trackerTwo));
 	}
 
