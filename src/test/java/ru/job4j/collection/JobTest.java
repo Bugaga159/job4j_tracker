@@ -63,7 +63,7 @@ public class JobTest {
 				.thenComparing(new JobAscByName());
 		int rsl = cmpNamePriority.compare(
 				new Job("End word", 3),
-				new Job("Fix bug", 2)
+				new Job("End word", 2)
 		);
 		assertThat(rsl, lessThan(0));
 	}
