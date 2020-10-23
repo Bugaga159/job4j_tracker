@@ -28,26 +28,15 @@ public class FreezeStr {
 		if (left.length() == right.length()) {
 			rsl = true;
 			Map<Character, Integer> map = new HashMap<>();
-			for (int i = 0; i < left.length(); i++) {
-				Character word = left.charAt(i);
-				if (!map.containsKey(word)) {
-					map.put(word, 1);
-				} else {
-					Integer value = map.get(word) + 1;
-					map.put(word, value);
-				}
+			for (char i: left.toCharArray()) {
+				Integer count = !map.containsKey(i) ? 1 : map.get(i) + 1;
+				map.put(i, count);
 			}
-			for (int i = 0; i < right.length(); i++) {
-				Character word = right.charAt(i);
-				if (!map.containsKey(word)) {
-					rsl = false;
-					break;
+			for (char rChar: right.toCharArray()) {
+				if (!map.containsKey(rChar) || map.get(rChar) == 0) {
+					return false;
 				}
-				if (map.get(word) == 0) {
-					rsl = false;
-					break;
-				}
-				map.put(word, map.get(word) - 1);
+				map.put(rChar, map.get(rChar) - 1);
 			}
 		}
 		return rsl;
