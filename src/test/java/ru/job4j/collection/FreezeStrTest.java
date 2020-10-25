@@ -25,24 +25,4 @@ public class FreezeStrTest {
 	public void whenEmptyStringEq() {
 		assertThat(FreezeStr.eq("", "hello"), is(false));
 	}
-
-	@Test
-	public void wheneqWithHashMap() {
-		assertThat(FreezeStr.eqWithHashMap("Hello", "Hlloe"), is(true));
-	}
-
-	@Test
-	public void whenNoteqWithHashMap() {
-		assertThat(FreezeStr.eqWithHashMap("Hello", "Halle"), is(false));
-	}
-
-	@Test
-	public void whenNotMultieqWithHashMap() {
-		assertThat(FreezeStr.eqWithHashMap("heloo", "hello"), is(false));
-	}
-
-	@Test
-	public void whenEmptyStringeqWithHashMap() {
-		assertThat(FreezeStr.eqWithHashMap("", "hello"), is(false));
-	}
 }
