@@ -34,7 +34,7 @@ public class DepartmentsTest {
 	@Test
 	public void whenSortDesc() {
 		List<String> input = Arrays.asList("k1/sk2", "k1", "k1/sk1", "k1/sk1/ssk1", "k2");
-		List<String> expect = Arrays.asList("k2", "k1", "k1/sk1", "k1/sk1/ssk1", "k1/sk2" );
+		List<String> expect = Arrays.asList("k2", "k1", "k1/sk1", "k1/sk1/ssk1", "k1/sk2");
 		Departments.sortDesc(input);
 		assertThat(input, is(expect));
 	}
