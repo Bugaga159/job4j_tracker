@@ -41,7 +41,10 @@ public class FI {
 				return (Mark) student;
 			}
 		};
-
+		Comparator<String> cmpText = (left, right) -> left.compareTo(right);
+		Comparator<String> cmpDescSize = (left, right) -> {
+			Integer.compare(right.length(), left.length());
+		};
 	}
 
 	public static void raw(List<Attachment> list, Function<Attachment, InputStream> func) {
