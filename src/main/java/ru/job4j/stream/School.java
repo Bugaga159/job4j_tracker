@@ -12,9 +12,10 @@ public class School {
 	}
 
 	public Map<String, Student> getMapStudents(List<Student> students) {
-		return students.stream().distinct().collect(Collectors.toMap(
-				e -> e.getSurname(),
-				e -> e
+		return students.stream().collect(Collectors.toMap(
+				Student::getSurname,
+				e -> e,
+				(existing, replacement) -> existing
 		));
 	}
 }
