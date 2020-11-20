@@ -13,7 +13,7 @@ public class StreamMatrixToListTest {
 	public void whenMatrixToListTest() {
 		Integer[][] matrix = {{1, 4, 2}, {4, 2, 5}};
 		List<Integer> res = StreamMatrixToList.getListFromMatrix(matrix);
-		List<Integer> exp = Arrays.asList(1, 4, 2, 4, 2, 5);
+		List<Integer> exp = List.of(1, 4, 2, 4, 2, 5);
 		assertThat(res, is(exp));
 	}
 

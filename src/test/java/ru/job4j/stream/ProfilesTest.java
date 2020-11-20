@@ -21,17 +21,16 @@ public class ProfilesTest {
 		profilesList.add(new Profile(new Address("Kiev", "Lenina", 45, 9)));
 	}
 
-	@SuppressWarnings("checkstyle:WhitespaceAfter")
 	@Test
 	public void whenProfileToMapAddressListTest() {
 		Profiles profiles = new Profiles();
 		List<Address> rsl = profiles.collect(profilesList);
-		List<Address> expected = new ArrayList<>();
-		expected.add(new Address("Kiev", "Lenina", 45, 9));
-		expected.add(new Address("Moscow", "Lenina", 12, 2));
-		expected.add(new Address("Moscow", "Pushkina", 28, 6));
-		expected.add(new Address("Moscow", "Chehova", 3, 7));
-		expected.add(new Address("Sochi", "Lenina", 12, 2));
+		List<Address> expected = List.of(
+			new Address("Kiev", "Lenina", 45, 9),
+			new Address("Moscow", "Lenina", 12, 2),
+			new Address("Moscow", "Pushkina", 28, 6),
+			new Address("Moscow", "Chehova", 3, 7),
+			new Address("Sochi", "Lenina", 12, 2));
 		assertThat(rsl, is(expected));
 	}
 }
