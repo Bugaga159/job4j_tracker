@@ -25,6 +25,15 @@ public class BankServiceTest {
 	}
 
 	@Test
+	public void whenEnterInvalidRequisite() {
+		User user = new User("3434", "Petr Arsentev");
+		BankService bank = new BankService();
+		bank.addUser(user);
+		bank.addAccount(user.getPassport(), new Account("5546", 150D));
+		assertNull(bank.findByRequisite("3434", "5545"));
+	}
+
+	@Test
 	public void addAccount() {
 		User user = new User("3434", "Petr Arsentev");
 		BankService bank = new BankService();
