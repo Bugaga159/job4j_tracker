@@ -1,15 +1,32 @@
 package ru.job4j.bank;
 
 import java.util.*;
-import java.util.stream.Stream;
 
+/**
+ * Класс описывает работу с юзерами и их счетами
+ * @author Andrey Panin
+ * @version 1.0
+ */
 public class BankService {
+	/**
+	 * Хранение юзеров со счетами осуществляется в коллекции типа HashMap
+	 */
 	private Map<User, List<Account>> users = new HashMap<>();
 
+	/**
+	 * Метод позволяет создать нового юзера
+	 * @param user новый юзер
+	 */
 	public void addUser(User user) {
 		users.putIfAbsent(user, new ArrayList<Account>());
 	}
 
+	/**
+	 * Метод добавляет юзеру новый счет
+	 * через поиск по паспорту юзера
+	 * @param passport паспорт юзера
+	 * @param account счет юзера
+	 */
 	public void addAccount(String passport, Account account) {
 		Optional<User> user = findByPassport(passport);
 		if (user.isPresent()) {
@@ -21,12 +38,26 @@ public class BankService {
 		}
 	}
 
+	/**
+	 * Метод осуществляет поиск юзера по паспорту и
+	 * возвращает первого найденного
+	 * @param passport паспорт юзера
+	 * @return an {@code Optional} describing the first element of this stream,
+	 * or an empty {@code Optional} if the stream is empty
+	 */
 	public Optional<User> findByPassport(String passport) {
 		return users.keySet().stream()
 				.filter(e -> e.getPassport().equals(passport))
 				.findFirst();
 	}
 
+	/**
+	 * Метод осуществляет поиск юзера по паспорту и реквизитам счета
+	 * @param passport паспорт юзера
+	 * @param requisite реквизиты счета
+	 * @return an {@code Optional} describing the first element of this stream,
+	 * or an empty {@code Optional} if the stream is empty
+	 */
 	public Optional<Account> findByRequisite(String passport, String requisite) {
 		Optional<User> user = findByPassport(passport);
 		Optional<Account> res = Optional.empty();
@@ -38,6 +69,16 @@ public class BankService {
 		return res;
 	}
 
+	/**
+	 * Метод осуществляет перевод денег с одного счета на другой
+	 * по паспортным данным и счетам
+	 * @param srcPassport паспорт юзера для списания
+	 * @param srcRequisite реквизиты счета для списания
+	 * @param destPassport паспорт юзера для поступления
+	 * @param destRequisite реквизиты счета для поступления
+	 * @param amount сумма
+	 * @return результат транзакции true/false
+	 */
 	public boolean transferMoney(String srcPassport, String srcRequisite,
 							String destPassport, String destRequisite,
 							double amount) {
